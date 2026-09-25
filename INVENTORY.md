@@ -1,6 +1,6 @@
-# Inventory (2026-09-23)
+# Inventory (2026-09-25)
 
-Setup global do Claude Code em `~/.claude`. Este repo guarda `CLAUDE.md`, `RTK.md` e `rules/`; o resto está listado aqui para reinstalar.
+Setup global do Claude Code em `~/.claude`. Este repo guarda `CLAUDE.md`, `RTK.md`, `rules/` e `skills/` (custom); o resto está listado aqui para reinstalar.
 
 ## Plugins
 
@@ -40,9 +40,9 @@ Reinstalar (dentro do Claude Code):
 - `graphify`, `impeccable`, `llm-council`
 - `ecc/`: accessibility, agent-introspection-debugging, agent-self-evaluation, agent-sort, ai-regression-testing, android-clean-architecture, angular-developer, api-design, architecture-decision-records, backend-patterns, browser-qa, bun-runtime, ck, clickhouse-io, click-path-audit, codebase-onboarding, codehealth-mcp, code-tour, coding-standards, compose-multiplatform-patterns, config-gc, configure-ecc, context-budget, continuous-learning, continuous-learning-v2, council, cpp-coding-standards, cpp-testing, csharp-testing, dart-flutter-patterns, database-migrations, delivery-gate, design-system, django-celery, django-patterns, django-tdd, django-verification, dmux-workflows, dotnet-patterns, e2e-testing, ecc-guide, ecc-recipes, error-handling, eval-harness, fastapi-patterns, flutter-dart-code-review, frontend-a11y, frontend-design-direction, frontend-patterns, frontend-slides, fsharp-testing, generating-python-installer, git-workflow, golang-patterns, golang-testing, growth-log, hexagonal-architecture, hookify-rules, inherit-legacy-style, intent-driven-development, iterative-retrieval, java-coding-standards, jpa-patterns, kotlin-coroutines-flows, kotlin-exposed-patterns, kotlin-ktor-patterns, kotlin-patterns, kotlin-testing, laravel-patterns, laravel-plugin-discovery, laravel-tdd, laravel-verification, loop-design-check, make-interfaces-feel-better, mcp-server-patterns, motion-advanced, motion-foundations, motion-patterns, motion-ui, mysql-patterns, nestjs-patterns, nextjs-turbopack, nuxt4-patterns, perl-patterns, perl-testing, plan-canvas, plankton-code-quality, postgres-patterns, prisma-patterns, production-audit, product-lens, python-patterns, python-testing, quarkus-patterns, quarkus-tdd, quarkus-verification, react-native-patterns, react-patterns, react-performance, react-testing, redis-patterns, repo-scan, rules-distill, rust-patterns, rust-testing, santa-method, skill-scout, skill-stocktake, springboot-patterns, springboot-tdd, springboot-verification, strategic-compact, tdd-workflow, tinystruct-patterns, ui-to-vue, verification-loop, vite-patterns, vue-patterns, windows-desktop-e2e
 
-## Agents (67, `~/.claude/agents`)
+## Agents (71, `~/.claude/agents`)
 
-a11y-architect, agent-evaluator, architect, build-error-resolver, chief-of-staff, code-architect, code-explorer, code-reviewer, code-simplifier, comment-analyzer, conversation-analyzer, cpp-build-resolver, cpp-reviewer, csharp-reviewer, dart-build-resolver, database-reviewer, django-build-resolver, django-reviewer, doc-updater, docs-lookup, e2e-runner, fastapi-reviewer, flutter-reviewer, fsharp-reviewer, gan-evaluator, gan-generator, gan-planner, go-build-resolver, go-reviewer, harmonyos-app-resolver, harness-optimizer, healthcare-reviewer, homelab-architect, java-build-resolver, java-reviewer, kotlin-build-resolver, kotlin-reviewer, loop-operator, marketing-agent, mle-reviewer, network-architect, network-config-reviewer, network-troubleshooter, opensource-forker, opensource-packager, opensource-sanitizer, performance-optimizer, php-reviewer, planner, pr-test-analyzer, python-reviewer, pytorch-build-resolver, react-build-resolver, react-reviewer, refactor-cleaner, rust-build-resolver, rust-reviewer, security-reviewer, seo-specialist, silent-failure-hunter, spec-miner, swift-build-resolver, swift-reviewer, tdd-guide, type-design-analyzer, typescript-reviewer, vue-reviewer
+a11y-architect, agent-evaluator, architect, build-error-resolver, chief-of-staff, code-architect, code-explorer, code-reviewer, code-simplifier, comment-analyzer, conversation-analyzer, cpp-build-resolver, cpp-reviewer, csharp-reviewer, dart-build-resolver, database-reviewer, django-build-resolver, django-reviewer, doc-updater, docs-lookup, e2e-runner, fastapi-reviewer, flutter-reviewer, fsharp-reviewer, gan-evaluator, gan-generator, gan-planner, go-build-resolver, go-reviewer, harmonyos-app-resolver, harness-optimizer, healthcare-reviewer, homelab-architect, impeccable-asset-producer, impeccable-documenter, impeccable-finish-reviewer, impeccable-manual-edit-applier, java-build-resolver, java-reviewer, kotlin-build-resolver, kotlin-reviewer, loop-operator, marketing-agent, mle-reviewer, network-architect, network-config-reviewer, network-troubleshooter, opensource-forker, opensource-packager, opensource-sanitizer, performance-optimizer, php-reviewer, planner, pr-test-analyzer, python-reviewer, pytorch-build-resolver, react-build-resolver, react-reviewer, refactor-cleaner, rust-build-resolver, rust-reviewer, security-reviewer, seo-specialist, silent-failure-hunter, spec-miner, swift-build-resolver, swift-reviewer, tdd-guide, type-design-analyzer, typescript-reviewer, vue-reviewer
 
 ## Commands (94, `~/.claude/commands`)
 
@@ -62,6 +62,7 @@ nexus, jira, github, firecrawl, supabase, memory, omega-memory, longhand, sequen
 git clone https://github.com/mathst/claude-config ~/claude-config
 cp ~/claude-config/CLAUDE.md ~/claude-config/RTK.md ~/.claude/
 cp -r ~/claude-config/rules ~/.claude/
+cp -r ~/claude-config/skills/* ~/.claude/skills/
 ```
 
 Depois reinstalar plugins (acima) e ECC.
@@ -70,6 +71,6 @@ Depois reinstalar plugins (acima) e ECC.
 
 ```bash
 cd ~/claude-config
-cp ~/.claude/CLAUDE.md ~/.claude/RTK.md . && rm -rf rules && cp -r ~/.claude/rules .
+cp ~/.claude/CLAUDE.md ~/.claude/RTK.md . && rm -rf rules skills && cp -r ~/.claude/rules . && mkdir skills && cp -r ~/.claude/skills/{graphify,llm-council} skills/
 git add -A && git commit -m "chore: sync claude config" && git push
 ```
