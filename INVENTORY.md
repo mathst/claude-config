@@ -32,12 +32,23 @@ Reinstalar (dentro do Claude Code):
 
 - **ECC (everything-claude-code)** — origem de `rules/ecc`, agents, commands, hooks e `skills/ecc`.
 - **RTK (Rust Token Killer)** — CLI proxy, ver `RTK.md`.
-- **graphify** — skill em `~/.claude/skills/graphify`.
+- **graphify** — skill em `~/.claude/skills/graphify` (cópia em `skills/graphify`).
 
 ## Skills (`~/.claude/skills`)
 
 - caveman (links para `~/.agents/skills`): `cavecrew`, `caveman`, `caveman-commit`, `caveman-compress`, `caveman-help`, `caveman-review`, `caveman-stats`
-- `graphify`, `impeccable`, `llm-council`
+- `graphify`, `llm-council` — copiadas em `skills/` deste repo
+- `impeccable` v4.3.1 (pbakaus/impeccable, 17 MB, não copiada) + agents `impeccable-asset-producer`, `impeccable-documenter`, `impeccable-finish-reviewer`, `impeccable-manual-edit-applier`
+- `find-skills` (vercel-labs/skills, em `~/.agents/skills`)
+- claude.ai (sincronizadas automaticamente em `skills/synced`): docs, docx, import-memory, morning, pdf, pptx, skill-creator, xlsx
+
+Reinstalar skills externas:
+
+```bash
+npx skills add JuliusBrussee/caveman
+npx skills add vercel-labs/skills --skill find-skills
+npx skills add pbakaus/impeccable
+```
 - `ecc/`: accessibility, agent-introspection-debugging, agent-self-evaluation, agent-sort, ai-regression-testing, android-clean-architecture, angular-developer, api-design, architecture-decision-records, backend-patterns, browser-qa, bun-runtime, ck, clickhouse-io, click-path-audit, codebase-onboarding, codehealth-mcp, code-tour, coding-standards, compose-multiplatform-patterns, config-gc, configure-ecc, context-budget, continuous-learning, continuous-learning-v2, council, cpp-coding-standards, cpp-testing, csharp-testing, dart-flutter-patterns, database-migrations, delivery-gate, design-system, django-celery, django-patterns, django-tdd, django-verification, dmux-workflows, dotnet-patterns, e2e-testing, ecc-guide, ecc-recipes, error-handling, eval-harness, fastapi-patterns, flutter-dart-code-review, frontend-a11y, frontend-design-direction, frontend-patterns, frontend-slides, fsharp-testing, generating-python-installer, git-workflow, golang-patterns, golang-testing, growth-log, hexagonal-architecture, hookify-rules, inherit-legacy-style, intent-driven-development, iterative-retrieval, java-coding-standards, jpa-patterns, kotlin-coroutines-flows, kotlin-exposed-patterns, kotlin-ktor-patterns, kotlin-patterns, kotlin-testing, laravel-patterns, laravel-plugin-discovery, laravel-tdd, laravel-verification, loop-design-check, make-interfaces-feel-better, mcp-server-patterns, motion-advanced, motion-foundations, motion-patterns, motion-ui, mysql-patterns, nestjs-patterns, nextjs-turbopack, nuxt4-patterns, perl-patterns, perl-testing, plan-canvas, plankton-code-quality, postgres-patterns, prisma-patterns, production-audit, product-lens, python-patterns, python-testing, quarkus-patterns, quarkus-tdd, quarkus-verification, react-native-patterns, react-patterns, react-performance, react-testing, redis-patterns, repo-scan, rules-distill, rust-patterns, rust-testing, santa-method, skill-scout, skill-stocktake, springboot-patterns, springboot-tdd, springboot-verification, strategic-compact, tdd-workflow, tinystruct-patterns, ui-to-vue, verification-loop, vite-patterns, vue-patterns, windows-desktop-e2e
 
 ## Agents (71, `~/.claude/agents`)
